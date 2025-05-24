@@ -21,6 +21,7 @@ export default function Menu() {
          <Link  className='font-extrabold text-1xl text-slate-800' href={"/order"} onClick={()=>setOpen(false)}>Order</Link>
         } 
         <Link href={"/"} className='bg-lime-300 p-2' onClick={()=>setOpen(false)}>+91000000000</Link>
+        <Link href={"/order"} className='shadow-2xl p-2' onClick={()=>setOpen(false)}>Orders</Link>
 
         </ul>
       }  

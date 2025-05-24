@@ -27,7 +27,7 @@ export default function Navbar() {
                     <Link href={'/orders'} className='bg-slate-200 px-1'>ORDER</Link>
                 }
                 {/* cart */}
-                <Link href={'/cart'} className='bg-red-300 px-1'>Cart</Link>
+                <Link href={'/cart'} className='hover:bg-red-300 shadow-lg text-gray-600 px-2'>Cart</Link>
             </div>
             <Menu />
         </div>
