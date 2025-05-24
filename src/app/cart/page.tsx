@@ -1,67 +1,64 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
-const CartPage = () => {
-  return (
-    <div className="h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row">
-      {/* PRODUCTS CONTAINER */}
-      <div className="h-1/2 p-4 flex flex-col justify-center overflow-scroll lg:h-full lg:w-2/3 2xl:w-1/2 lg:px-20 xl:px-40">
-        {/* SINGLE ITEM */}
-        <div className="flex items-center justify-between mb-4">
-          <Image src="/temporary/p1.png" alt="" width={100} height={100} />
-          <div className="">
-            <h1 className="uppercase text-xl font-bold">sicilian</h1>
-            <span>Large</span>
-          </div>
-          <h2 className="font-bold">$79.90</h2>
-          <span className="cursor-pointer">X</span>
-        </div>
-        {/* SINGLE ITEM */}
-        <div className="flex items-center justify-between mb-4">
-          <Image src="/temporary/p1.png" alt="" width={100} height={100} />
-          <div className="">
-            <h1 className="uppercase text-xl font-bold">sicilian</h1>
-            <span>Large</span>
-          </div>
-          <h2 className="font-bold">$79.90</h2>
-          <span className="cursor-pointer">X</span>
-        </div>
-        {/* SINGLE ITEM */}
-        <div className="flex items-center justify-between mb-4">
-          <Image src="/temporary/p1.png" alt="" width={100} height={100} />
-          <div className="">
-            <h1 className="uppercase text-xl font-bold">sicilian</h1>
-            <span>Large</span>
-          </div>
-          <h2 className="font-bold">$79.90</h2>
-          <span className="cursor-pointer">X</span>
-        </div>
-      </div>
-      {/* PAYMENT CONTAINER */}
-      <div className="h-1/2 p-4 bg-fuchsia-50 flex flex-col gap-4 justify-center lg:h-full lg:w-1/3 2xl:w-1/2 lg:px-20 xl:px-40 2xl:text-xl 2xl:gap-6">
-        <div className="flex justify-between">
-          <span className="">Subtotal (3 items)</span>
-          <span className="">$81.70</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="">Service Cost</span>
-          <span className="">$0.00</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="">Delivery Cost</span>
-          <span className="text-green-500">FREE!</span>
-        </div>
-        <hr className="my-2" />
-        <div className="flex justify-between">
-          <span className="">TOTAL(INCL. VAT)</span>
-          <span className="font-bold">$81.70</span>
-        </div>
-        <button className="bg-red-500 text-white p-3 rounded-md w-1/2 self-end">
-          CHECKOUT
-        </button>
-      </div>
-    </div>
-  );
-};
+export default function Cartpage() {
+    return (
+        <div className='flex flex-wrap'>
+            {/* left container */}
+            <div className='md:w-1/2 md:h-[87vh] w-full h-[43.9vh] flex justify-center flex-col gap-4 bg-gray-200'>
+                {/* items */}
+                <div className='flex justify-evenly items-center md:p-3 text-slate-600'>
+                    <Image src={'/temporary/p1.png'} width={70} height={60} alt='' />
+                    {/* text */}
+                    <div className='flex flex-col'>
+                        <h1 className='md:font-extrabold font-medium uppercase '>Sicilian pizza</h1>
+                        <span className='font-medium'>Large</span>
+                    </div>
+                    {/* price */}
+                    <div className='md:font-extrabold font-medium'>Rs.270</div>
+                    {/* close */}
+                    <div className='md:font-extrabold font-medium md:text-3xl text-md cursor-pointer'>X</div>
+                </div>
+                <div className='flex justify-evenly items-center md:p-3 text-slate-600'>
+                    <Image src={'/temporary/p2.png'} width={70} height={60} alt='' />
+                    {/* text */}
+                    <div className='flex flex-col'>
+                        <h1 className='md:font-extrabold font-medium uppercase '>Bacon Deluxe</h1>
+                        <span className='font-medium'>Extra BBQ Sauce</span>
+                    </div>
+                    {/* price */}
+                    <div className='md:font-extrabold font-medium'>Rs.120</div>
+                    {/* close */}
+                    <div className='md:font-extrabold font-medium md:text-3xl text-md cursor-pointer'>X</div>
+                </div>
+            </div>
+            {/* right container  */}
+            <div className='md:w-1/2 md:h-[87vh] w-full h-[43.9vh] flex justify-center flex-col gap-4 text-gray-800 bg-fuchsia-200'>
+                <div className='lg:px-36 md:px-10 px-4 font-semibold flex gap-4 flex-col'>
 
-export default CartPage;
+                    {/* stubtotal */}
+                    <div className='flex justify-between items-center'>
+                        <h3 className=''>Sub Total (2 items)</h3>
+                        <h5 className=''>Rs.390</h5>
+                    </div>
+                    {/* service cost  */}
+                    <div className='flex justify-between items-center'>
+                        <h3>Service Cost</h3>
+                        <h5>Rs.0</h5>
+                    </div>
+                    {/* deliver cost  */}
+                    <div className='flex justify-between items-center'>
+                        <h3>Delivery Cost</h3>
+                        <h5 className='text-green-500'>FREE!</h5>
+                    </div>
+                    {/* total  */}
+                    <div className='flex justify-between items-center'>
+                        <h3>TOTAL</h3>
+                        <h5>Rs.390</h5>
+                    </div>
+                    <button className='bg-red-400 hover:bg-red-500 text-white font-extrabold text-xl uppercase'>Checkout</button>
+                </div>
+            </div>
+        </div>
+    )
+}

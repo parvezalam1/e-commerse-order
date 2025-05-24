@@ -333,12 +333,13 @@ export const pizzas: Products = [
   },
 ];
 
+
 export const singleProduct: Product = {
   id: 1,
   title: "Sicilian",
   desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
   img: "/temporary/p1.png",
-  price: 24.9,
+  price: 220,
   options: [
     {
       title: "Small",
@@ -346,14 +347,16 @@ export const singleProduct: Product = {
     },
     {
       title: "Medium",
-      additionalPrice: 4,
+      additionalPrice: 30,
     },
     {
       title: "Large",
-      additionalPrice: 6,
+      additionalPrice: 70,
     },
   ],
 };
+
+
 
 
 type Menu = {
@@ -391,3 +394,5 @@ export const menu: Menu = [
     color: "white",
   },
 ];
+
+

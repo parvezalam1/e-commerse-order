@@ -1,38 +1,30 @@
-import { featuredProducts } from "@/data";
-import Image from "next/image";
-import React from "react";
+import { featuredProducts } from '@/data';
+import Image from 'next/image';
+import React from 'react';
 
-const Featured = () => {
+export default function Featured() {
   return (
-    <div className="w-screen overflow-x-scroll text-red-500">
-      {/* WRAPPER */}
-      <div className="w-max flex">
-        {/* SINGLE ITEM */}
-        {featuredProducts.map((item) => (
-          <div
-            key={item.id}
-            className="w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300 md:w-[50vw] xl:w-[33vw] xl:h-[90vh]"
-          >
-            {/* IMAGE CONTAINER */}
-            {item.img && (
-              <div className="relative flex-1 w-full hover:rotate-[60deg] transition-all duration-500">
-                <Image src={item.img} alt="" fill className="object-contain" />
-              </div>
-            )}
-            {/* TEXT CONTAINER */}
-            <div className=" flex-1 flex flex-col items-center justify-center text-center gap-4">
-              <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl">{item.title}</h1>
-              <p className="p-4 2xl:p-8">{item.desc}</p>
-              <span className="text-xl font-bold">${item.price}</span>
-              <button className="bg-red-500 text-white p-2 rounded-md">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+    <div className='w-full featured overflow-x-scroll'>
 
-export default Featured;
+    <div className='w-max flex '>
+    {
+        featuredProducts.map((item)=>
+        // card 
+        <div key={item.id} className='p-3 hover:bg-red-50 w-screen md:w-[50vw] lg:w-[33vw] h-[70vh] transition-all duration-300 flex flex-col gap-4 justify-center items-center'>
+            <div className='w-[90%] h-[40vh] hover:rotate-[45deg] scale-75 transition-all duration-500'>
+           {item.img && <Image src={item.img} fill alt='' />}
+            </div>
+            {/* name */}
+            <h2 className='px-1 font-bold md:text-xl text-lg text-slate-700'>{item.title}</h2>
+            {/* about item */}
+            <h3 className='p-1 font-bold md:text-lg texl-md text-slate-500'>{item.desc}</h3>
+            {/* prize  */}  
+            <h5 className='px-5 font-bold text-xl text-slate-700'>Rs.{item.price}</h5>
+            <button className='bg-slate-200 hover:bg-gray-500 font-semibold text-red-600 px-3 py-1 hover:text-white'>Add to Cart</button>
+        </div>
+        )
+    }
+    </div>
+    </div>
+  )
+}

@@ -1,30 +1,28 @@
-import Price from "@/components/Price";
-import { singleProduct } from "@/data";
-import Image from "next/image";
-import React from "react";
+import Price from '@/components/Price'
+import { singleProduct } from '@/data'
+import Image from 'next/image'
+import React from 'react'
 
-const SingleProductPage = () => {
+export default function SinglePage() {
   return (
-    <div className="p-4 lg:px-20 xl:px-40 h-screen flex flex-col justify-around text-red-500 md:flex-row md:gap-8 md:items-center">
-      {/* IMAGE CONTAINER */}
-      {singleProduct.img && (
-        <div className="relative w-full h-1/2 md:h-[70%]">
-          <Image
-            src={singleProduct.img}
-            alt=""
-            className="object-contain"
-            fill
-          />
-        </div>
-      )}
-      {/* TEXT CONTAINER */}
-      <div className="h-1/2 flex flex-col gap-4 md:h-[70%] md:justify-center md:gap-6 xl:gap-8">
-        <h1 className="text-3xl font-bold uppercase xl:text-5xl">{singleProduct.title}</h1>
-        <p>{singleProduct.desc}</p>
-        <Price price={singleProduct.price} id={singleProduct.id} options={singleProduct.options}/>
+    <div className='flex md:flex-row flex-col md:h-[85vh]'>
+      <div className='md:w-1/2 w-full md:h-full h-1/2 flex justify-center items-center p-3'>
+
+        {
+          // image container
+          singleProduct.img &&
+          <div className='relative w-3/4 md:h-[70vh] sm:h-[45vh] h-[35vh]'>
+            <Image src={singleProduct.img} fill alt='' />
+          </div>
+
+        }
+      </div>
+      {/* // text container  */}
+      <div className='lg:p-10 p-2 md:w-1/2 w-full md:h-full h-1/2 flex justify-center flex-col gap-2 md:gap-6'>
+        <h1 className='font-extrabold text-xl text-slate-700 uppercase'>{singleProduct.title}</h1>
+        <h1 className='font-medium text-md text-slate-700 text-justify'>{singleProduct.desc}</h1>
+        <Price price={singleProduct.price} options={singleProduct.options} id={singleProduct.id} />
       </div>
     </div>
-  );
-};
-
-export default SingleProductPage;
+  )
+}

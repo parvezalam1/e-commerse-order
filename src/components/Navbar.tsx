@@ -1,42 +1,35 @@
-import React from "react";
-import Menu from "./Menu";
-import Link from "next/link";
-import CartIcon from "./CartIcon";
-import Image from "next/image";
+"use client"
+import React, { useState } from 'react'
+import Menu from './Menu'
+import Image from 'next/image'
+import Link from 'next/link'
 
-const Navbar = () => {
-  const user = false;
-  return (
-    <div className="h-12 text-red-500 p-4 flex items-center justify-between border-b-2 border-b-red-500 uppercase md:h-24 lg:px-20 xl:px-40">
-      {/* LEFT LINKS */}
-      <div className="hidden md:flex gap-4 flex-1">
-        <Link href="/">Homepage</Link>
-        <Link href="/menu">Menu</Link>
-        <Link href="/">Contact</Link>
-      </div>
-      {/* LOGO */}
-      <div className="text-xl md:font-bold flex-1 md:text-center">
-        <Link href="/">Massimo</Link>
-      </div>
-      {/* MOBILE MENU */}
-      <div className="md:hidden">
-        <Menu />
-      </div>
-      {/* RIGHT LINKS */}
-      <div className="hidden md:flex gap-4 items-center justify-end flex-1">
-        <div className="md:absolute top-3 r-2 lg:static flex items-center gap-2 cursor-pointer bg-orange-300 px-1 rounded-md">
-          <Image src="/phone.png" alt="" width={20} height={20} />
-          <span>123 456 78</span>
+export default function Navbar() {
+    let user=false;
+    return (
+        <div className='flex relative  justify-around items-center bg-stone-200 p-2'>
+            {/* left */}
+           <div className='md:block hidden gap-x-4'>
+           <Link href={"/"}  className='font-extrabold text-1xl text-slate-800'>HomePage</Link>
+           <Link href={"/menu"}  className='font-extrabold text-1xl text-slate-800 ml-4'>Menu</Link>
+           <Link href={"/contact"}  className='font-extrabold text-1xl text-slate-800 ml-4'>Contact</Link>
+           </div>
+            {/* center  */}
+            <div className='uppercase font-extrabold text-slate-700 text-xl'>Parvez alam</div>
+            {/* right */}
+            <div className='md:flex hidden gap-x-3 font-semibold'>
+                {/* phone number */}
+                <Link href={'/contact'} className='bg-yellow-200 px-1'>+91000000000</Link>
+                {/* order */}
+                {
+                    !user?
+                    <Link href={'/login'} className='bg-slate-200 px-1'>Login</Link>:
+                    <Link href={'/orders'} className='bg-slate-200 px-1'>ORDER</Link>
+                }
+                {/* cart */}
+                <Link href={'/cart'} className='bg-red-300 px-1'>Cart</Link>
+            </div>
+            <Menu />
         </div>
-        {!user ? (
-          <Link href="/login">Login</Link>
-        ) : (
-          <Link href="/orders">Orders</Link>
-        )}
-        <CartIcon />
-      </div>
-    </div>
-  );
-};
-
-export default Navbar;
+    )
+}
