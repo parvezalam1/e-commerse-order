@@ -4,11 +4,11 @@ import React from 'react'
 
 export default function Loginpage() {
     return (
-        <div className='flex justify-center items-center h-[87vh]'>
+        <div className='flex justify-center items-center md:h-[87vh] h-[77vh]'>
             {/* login box */}
-            <div className='shadow-lg lg:w-1/2 md:h-3/4 w-[90%] md:h-[60vh] flex flex-wrap'>
+            <div className='shadow-lg lg:w-1/2 w-[90%] md:h-[60vh] flex flex-wrap'>
                 {/* image container */}
-                <div className='relative md:w-1/2 w-full md:h-full h-[30vh]'>
+                <div className='relative md:w-1/2 w-full md:h-full h-[25vh]'>
                     <Image src={'/loginBg.png'} fill alt='' />
                 </div>
                 {/* text container  */}

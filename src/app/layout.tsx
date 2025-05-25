@@ -20,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div>
+          <div className="sticky top-0 z-50">
           <Notificatioin/>
           <Navbar/>
+          </div>
           {children}
           <Footer/>
         </div>
